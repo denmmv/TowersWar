@@ -12,8 +12,6 @@ public class GameLogic : MonoBehaviour
     [SerializeField] private GameObject _UI;
     public UnityEvent PlayerFirstSelected;
     public UnityEvent PlayerSecondSelected;
-
-    public bool isPlayer1 = false;//?
     private void Start()
     {
         _firstPlayer.onClick.AddListener(choiceFirst);
@@ -32,7 +30,6 @@ public class GameLogic : MonoBehaviour
     private void startGame()
     {
         _choose.SetActive(false);
-        _UI.SetActive(true);
-        
+        _UI.SetActive(true);        
     }
 }

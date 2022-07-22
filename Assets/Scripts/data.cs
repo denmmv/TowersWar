@@ -9,7 +9,6 @@ public class data : ScriptableObject
     [SerializeField] private int _countToDestroy;
     [SerializeField] private float _cooldownShoot;
     [SerializeField] private float _health;
-
     public int CooldownCount
     {
         get

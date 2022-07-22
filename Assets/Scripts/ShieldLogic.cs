@@ -8,20 +8,17 @@ using TMPro;
 public class ShieldLogic : MonoBehaviour
 {
     [SerializeField] data data;
-
     [SerializeField] private Button _shieldButton;
     [SerializeField] private GameObject _shieldLeft;
     [SerializeField] private GameObject _shieldRight;
     [SerializeField] private TextMeshProUGUI _timer;
     [SerializeField] private GameObject _timerBack;
-
     private GameObject _enemyShield;
     private int _cooldownTimer;
     private Coroutine Cooldown;
     private Coroutine EnemyCooldown;
     private GameObject _shield;
     private bool _enemyShieldReady;
-
     private bool _shieldIsActive = false;
     private bool _shieldButtonIsActive = true;
     private void Start()
@@ -79,8 +76,7 @@ public class ShieldLogic : MonoBehaviour
         else
         {
             _shieldButtonIsActive = true;
-        }
-        
+        }       
     }
     IEnumerator cooldown()
     {

@@ -19,7 +19,6 @@ public class TowerLogic : MonoBehaviour ,ITower
     public UnityEvent PeopleWin;
     public UnityEvent AIWin;
     private bool _gameStarted = false;
-
     private float _health;
     public void IsPlayer()
     {
@@ -29,7 +28,6 @@ public class TowerLogic : MonoBehaviour ,ITower
     {
         _gameStarted = true;
     }
-
     public void Lose()
     {
         if (_isPlayer)
@@ -48,7 +46,6 @@ public class TowerLogic : MonoBehaviour ,ITower
         {
             Shooting = StartCoroutine(shooting());
         }
-        /*throw new System.NotImplementedException();*/
     }
     public void GunRotate()
     {
@@ -76,9 +73,9 @@ public class TowerLogic : MonoBehaviour ,ITower
     }
     IEnumerator shooting()
     {
-        GameObject bu = Instantiate(_bullet, _bulletPlace.position, Quaternion.identity);
-        Rigidbody2D buf = bu.GetComponent<Rigidbody2D>();
-        buf.AddForce((bu.transform.position - _bulletVector.position) * 380f);
+        GameObject buf1 = Instantiate(_bullet, _bulletPlace.position, Quaternion.identity);
+        Rigidbody2D buf = buf1.GetComponent<Rigidbody2D>();
+        buf.AddForce((buf1.transform.position - _bulletVector.position) * 380f);
         yield return new WaitForSeconds(cooldownShoot);
         StopCoroutine(Shooting);
         Shooting = null;
@@ -91,13 +88,11 @@ public class TowerLogic : MonoBehaviour ,ITower
         {
             Lose();
         }
-        /*throw new System.NotImplementedException();*/
     }
     void Start()
     {
         cooldownShoot = data.CooldownShoot;
         _health = data.Health;
-
     }
     private void Update()
     {
@@ -115,5 +110,4 @@ public class TowerLogic : MonoBehaviour ,ITower
             TakeDamage();
         }
     }
-
 }

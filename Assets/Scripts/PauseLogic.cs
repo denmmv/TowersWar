@@ -14,8 +14,6 @@ public class PauseLogic : MonoBehaviour
     [SerializeField] private GameObject _pauseMenu;
     [SerializeField] private GameObject _endScreen;
     [SerializeField] private TextMeshProUGUI _endText;
-    // Start is called before the first frame update
-
     private void Start()
     {
         _pauseButton.onClick.AddListener(PauseGame);
